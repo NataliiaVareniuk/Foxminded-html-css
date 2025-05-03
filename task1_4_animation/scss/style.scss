@@ -1,0 +1,167 @@
+@use "sass:math";
+@import "_reset.scss";
+@import "_mixins.scss";
+@import "variables";
+
+body {
+  background-color: $background_color;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+
+  & > .page {
+    flex-grow: 1;
+  }
+}
+
+[class*="__container"] {
+  max-width: toRem(1424);
+  padding-inline: toRem(15);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.page {
+  padding-block: toRem(300);
+}
+
+.animation {
+  padding-block: toRem(36);
+  display: flex;
+  position: relative;
+
+  &__eater {
+    width: toRem(255);
+    height: toRem(208);
+    flex-basis: 100%;
+    padding-left: toRem(60);
+    margin-left: toRem(-15);
+    display: flex;
+    align-items: center;
+    background-color: $background_color;
+    z-index: 20;
+  }
+}
+
+.eater {
+  &__head {
+    height: toRem(167);
+    width: toRem(157);
+    background-color: $main_color;
+    border-radius: 50%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: toRem(86);
+      width: toRem(86);
+      background-color: $background_color;
+      border-radius: 50%;
+      z-index: 10;
+      top: toRem(100);
+      left: toRem(141);
+      //clip-path: polygon(0 50%, 100% 50%, 100% 50%);
+      clip-path: polygon(0 50%, 100% 100%, 100% 0);
+      animation: eating 0.9s cubic-bezier(0, 1.24, 0.58, 1) infinite;
+    }
+  }
+
+  &__ears {
+    &::after {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: toRem(34) solid $main_color;
+      border-right: toRem(28) solid transparent;
+      transform: rotate(34.8deg);
+      z-index: 1;
+      top: toRem(35);
+      left: toRem(158);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: toRem(77) solid $main_color;
+      border-right: toRem(61) solid transparent;
+      transform: rotate(37.5deg);
+      z-index: 2;
+      top: toRem(25);
+      left: toRem(116);
+    }
+  }
+
+  &__tail {
+    position: absolute;
+    z-index: 5;
+    width: toRem(67);
+    height: toRem(103);
+    top: toRem(130);
+    left: toRem(17);
+    transform: rotate(-49deg);
+    background: url("../img/tail.png") center / 100% no-repeat;
+    animation: tail-move 2s linear infinite;
+  }
+}
+
+.food {
+  display: flex;
+  max-width: 74.25rem;
+  flex-basis: 70%;
+}
+
+.cirkles {
+  display: flex;
+  z-index: 25;
+  position: relative;
+  justify-content: space-between;
+  column-gap: toRem(155);
+  padding-left: toRem(155);
+  align-items: center;
+  animation: move 0.9s linear infinite;
+
+  &__item {
+    width: toRem(43);
+    height: toRem(43);
+    border-radius: 50%;
+    background-color: $white_color;
+  }
+}
+
+@keyframes eating {
+  0%,
+  100% {
+    clip-path: polygon(0 50%, 100% 100%, 100% 0);
+  }
+  33% {
+    clip-path: polygon(0 50%, 100% 50%, 100% 50%);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(calc(-25%));
+  }
+}
+
+@keyframes tail-move {
+  0%,
+  100% {
+    transform: rotate(-49deg);
+  }
+
+  50% {
+    transform: rotate(-25deg);
+  }
+}

@@ -1,0 +1,109 @@
+@use "sass:math";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:900&display=swap");
+
+@import "reset";
+@import "mixins";
+@import "variables";
+
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: column;
+}
+
+[class*="__container"] {
+  max-width: toRem($containerWidth);
+  padding-inline: toRem(15);
+  margin: 0 auto;
+}
+
+.section {
+  &__body {
+    height: 100vh;
+  }
+
+  &__body--winter {
+    background: url("../img/winter.png") center/37% no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-color: $winter_color;
+  }
+
+  &__body--spring {
+    background: url("../img/spring.png") center/45% no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-color: $spring_color;
+  }
+
+  &__body--summer {
+    background: url("../img/summer.png") center/33% no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-color: $summer_color;
+  }
+
+  &__body--autumn {
+    background: url("../img/autumn.png") 52% 53%/37% no-repeat;
+    position: relative;
+    background-attachment: fixed;
+    background-color: $autumn_color;
+  }
+}
+
+.parallax {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background-attachment: fixed;
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: toRem(-100);
+
+    @media (max-width: toEm(870.98)) {
+      bottom: toRem(20);
+    }
+
+    @media (max-width: toEm(670.98)) {
+      bottom: toRem(120);
+    }
+
+    @media (max-width: toEm(570.98)) {
+      bottom: toRem(170);
+    }
+
+    @media (max-width: toEm(470.98)) {
+      bottom: toRem(210);
+    }
+
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: clamp(toRem(80), 20.5vw, toRem(322));
+    font-weight: 900;
+    line-height: 1.81;
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+  }
+
+  &__img--winter {
+    background: url("../img/winter.png") center/50% no-repeat;
+    background-attachment: fixed;
+    background-color: $winter_color;
+    height: 100%;
+    width: 100%;
+  }
+}

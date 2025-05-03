@@ -1,0 +1,326 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pridi:regular&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f8f8;
+  color: #000000;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wrapper > .page {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+@media (max-width: 42.87375em) {
+  .wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.menu__item {
+  cursor: pointer;
+}
+@media (any-hover: hover) {
+  .menu__item:hover {
+    background-color: rgba(255, 182, 159, 0.3);
+    font-weight: 600;
+  }
+}
+.menu__item:active, .menu__item:checked, .menu__item:focus {
+  background-color: rgba(255, 182, 159, 0.3);
+  font-weight: 600;
+}
+
+.page {
+  padding-left: 16.5rem;
+  padding-right: clamp(0.6875rem, 2.5vw, 8.75rem);
+  padding-block: 3.75rem;
+}
+.page__container {
+  padding-inline: 1.4375rem;
+}
+@media (max-width: 42.87375em) {
+  .page {
+    padding-left: 0.5625rem;
+    padding-bottom: 5.0625rem;
+  }
+  .page__container {
+    padding-inline: 0rem;
+  }
+}
+
+/* HEADER*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #d64200;
+  color: #ffffff;
+  min-width: 16.5rem;
+  min-height: 100%;
+  height: 100vh;
+  padding-top: 1.5625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+@media (max-width: 42.87375em) {
+  .header {
+    width: 100%;
+    height: 3.8125rem;
+    padding-top: 0rem;
+    position: sticky;
+  }
+}
+.header__logo-img {
+  width: 7.6875rem;
+  height: 8.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-left: 1.4375rem;
+}
+.header__logo-img:not(:last-child) {
+  margin-bottom: 1.4375rem;
+}
+@media (max-width: 29.99875em) {
+  .header__logo-img:not(:last-child) {
+    margin-bottom: 1.25rem;
+  }
+}
+@media (max-width: 42.87375em) {
+  .header__logo-img {
+    position: absolute;
+    bottom: 0rem;
+    right: -100%;
+    z-index: 5;
+  }
+}
+
+.menu__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.818;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-transform: capitalize;
+  padding-block: 0.625rem 0.5rem;
+  padding-left: 1.4375rem;
+  position: relative;
+}
+@media (max-width: 42.87375em) {
+  .menu__title {
+    display: block;
+    padding-block: 0.625rem;
+  }
+  .menu__title::after {
+    content: "";
+    position: absolute;
+    top: 1.125rem;
+    right: 1.3125rem;
+    width: 1.625rem;
+    height: 1.625rem;
+    position: absolute;
+    background: url("../img/chevron-up.svg") center/100% no-repeat;
+  }
+}
+.menu__item {
+  padding-left: 1.5625rem;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  position: relative;
+  line-height: 1.817;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-transform: capitalize;
+  padding-block: 0.8125rem 1rem;
+  border-top: 0.0625rem solid rgba(255, 255, 255, 0.4);
+}
+@media (min-width: 42.87375em) {
+  .menu__item:last-child {
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.4);
+  }
+}
+@media (max-width: 42.87375em) {
+  .menu__list {
+    visibility: hidden;
+  }
+}
+
+.active {
+  background-color: rgba(255, 182, 159, 0.3);
+}
+
+.info-section__title, .info-section__link {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.818;
+  letter-spacing: 0.02em;
+  text-align: left;
+  text-transform: capitalize;
+}
+.info-section__title:not(:last-child), .info-section__link:not(:last-child) {
+  margin-bottom: 0.875rem;
+}
+.info-section__text, .info-section__list, .info-section__span {
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.728;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.info-section__text:not(:last-child), .info-section__list:not(:last-child), .info-section__span:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.info-section__list {
+  padding-left: 1rem;
+}
+.info-section__item {
+  list-style-type: disc;
+}
+.info-section__span {
+  font-family: "Pridi", sans-serif;
+  background-color: #c8c4c5;
+  padding-block: 0.875rem;
+  padding-left: 1.25rem;
+}
+.info-section__span:not(:last-child) {
+  margin-bottom: 1.4375rem;
+}
+@media (max-width: 42.87375em) {
+  .info-section__span {
+    font-size: 1.0625rem;
+  }
+}
+.info-section__link {
+  font-weight: 700;
+}
+@media (any-hover: hover) {
+  .info-section__link:hover {
+    -webkit-transform: scale(1.02);
+        -ms-transform: scale(1.02);
+            transform: scale(1.02);
+    color: #d64200;
+  }
+}
+
+p mark {
+  background-color: #c8c4c5;
+  font-family: "Pridi", sans-serif;
+}
+
+.menu-open .header {
+  min-height: 37.125rem;
+  padding-top: 0rem;
+}
+.menu-open .header__logo-img {
+  right: 1.8125rem;
+}
+@media (max-width: 42.87375em) {
+  .menu-open .menu__title::after {
+    background: url("../img/chevron-down.svg") center/100% no-repeat;
+  }
+}
+.menu-open .menu__list {
+  visibility: visible;
+}

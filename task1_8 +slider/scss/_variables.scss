@@ -1,0 +1,30 @@
+$main_color: #cc5520;
+$white_color: #ffffff;
+$brand-color: #fab716;
+$black_color: #000000;
+$brown_color: #532322;
+$gray_color: #969595;
+$selected_button: #ff3d00;
+$text_color: #0f001a;
+$light_gray: #f2f2f2;
+$fox-background: #ffe9d0;
+
+:root {
+  --translateStep: 0%;
+}
+
+$background_color: #f8f8f8;
+
+$minWidth: 375;
+
+$maxWidth: 1440;
+
+$maxWidthContainer: 1094;
+$maxHeaderContainer: 938;
+$maxFooterContainer: 1214;
+
+$containerPadding: 10;
+
+$containerWidth: $maxWidthContainer + $containerPadding + $containerPadding;
+$footerContainer: $maxFooterContainer + 18 + 18;
+$headerContainer: $maxHeaderContainer + $containerPadding + $containerPadding;

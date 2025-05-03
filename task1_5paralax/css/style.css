@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:900&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  line-height: 1;
+  height: 100%;
+}
+
+/* FORM */
+input,
+button,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+[class*=__container] {
+  max-width: 88.5rem;
+  padding-inline: 0.9375rem;
+  margin: 0 auto;
+}
+
+.section__body {
+  height: 100vh;
+}
+.section__body--winter {
+  background: url("../img/winter.png") center/37% no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  background-color: #0057ff;
+}
+.section__body--spring {
+  background: url("../img/spring.png") center/45% no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  background-color: #00cc39;
+}
+.section__body--summer {
+  background: url("../img/summer.png") center/33% no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  background-color: #f19f00;
+}
+.section__body--autumn {
+  background: url("../img/autumn.png") 52% 53%/37% no-repeat;
+  position: relative;
+  background-attachment: fixed;
+  background-color: #d64200;
+}
+
+.parallax {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  z-index: 1;
+  background-attachment: fixed;
+}
+.parallax__text {
+  font-family: "Roboto", sans-serif;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: -6.25rem;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+      -ms-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  font-size: clamp(5rem, 20.5vw, 20.125rem);
+  font-weight: 900;
+  line-height: 1.81;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+@media (max-width: 54.43625em) {
+  .parallax__text {
+    bottom: 1.25rem;
+  }
+}
+@media (max-width: 41.93625em) {
+  .parallax__text {
+    bottom: 7.5rem;
+  }
+}
+@media (max-width: 35.68625em) {
+  .parallax__text {
+    bottom: 10.625rem;
+  }
+}
+@media (max-width: 29.43625em) {
+  .parallax__text {
+    bottom: 13.125rem;
+  }
+}
+.parallax__img--winter {
+  background: url("../img/winter.png") center/50% no-repeat;
+  background-attachment: fixed;
+  background-color: #0057ff;
+  height: 100%;
+  width: 100%;
+}

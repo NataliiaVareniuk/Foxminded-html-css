@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"> git
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Task1_3</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container content-header">
+            <h1 class="content-header__title">Create Account </h1>
+            <div class="content-header__logo">
+                <img class="content-header__img" src="img/fox03.png" alt="Image logo">
+            </div>
+        </div>
+    </header>
+    <main class="page">
+        <section class="page__section  section-input">
+            <div class="section-input__container input-data">
+                <form enctype="multipart/form-data" action="#" class="input-data__form form">
+                    <div class="form__personal-data personal">
+                        <div class=" personal__line">
+                            <label class=" personal__label" title="Be sure to fill in" for="name">First name*</label>
+                            <input name="form[name]" id="name" autocomplete="off" placeholder="Enter your first name" class="personal__input" type="text" required tabindex="1">
+                        </div>
+                        <div class=" personal__line">
+                            <label class=" personal__label" title="Be sure to fill in" for="lastName">Last name*</label>
+                            <input name="form[lastname]" id="lastName" autocomplete="off" placeholder="Enter your last name" class=" personal__input" type="text" required tabindex="2">
+                        </div>
+                        <div class=" personal__line  personal__line--long">
+                            <label class=" personal__label" for="email" title="Be sure to fill in">Email*</label>
+                            <input name="form[email]" id="email" autocomplete="off" placeholder="Enter your email" class=" personal__input" type="email" required tabindex="3">
+                        </div>
+                        <div class=" personal__line">
+                            <label class=" personal__label" for="pass" title="Minimum 8 characters ">Password*</label>
+                            <input name="form[pass]" id="pass" autocomplete="off" placeholder="Enter your password" class=" personal__input" type="password" minlength="8" required tabindex="4">
+                        </div>
+                        <div class=" personal__line">
+                            <label class=" personal__label" for="passRepeat" title="Be sure to fill in">Confirm Password*</label>
+                            <input name="form[conpass]" id="passRepeat" autocomplete="off" placeholder="Enter correct your confirm password" class=" personal__input" type="password" required tabindex="5">
+                        </div>
+                    </div>
+                    <div class="form__additional-info">
+                        <div class="form__gender-data radio">
+                            <div class="radio__label">Gender:</div>
+                            <fieldset class="radio__items">
+                                <div class="radio__item ">
+                                    <input name="gender" class="radio__input " id="male" required value="form[name]" type="radio" tabindex="7">
+                                    <label class="radio__caption" for="male">Male</label>
+                                </div>
+                                <div class="radio__item">
+                                    <input name="gender" class="radio__input " id="female" required value="form[female]" type="radio" tabindex="8">
+                                    <label class="radio__caption" for="female">Female</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form__hobbies-data checkbox ">
+                            <label class="checkbox__label">Hobbies:</label>
+                            <div class="checkbox__group">
+                                <div class=" checkbox__item ">
+                                    <input name="form[hobby-01]" id="hobby-01" class="checkbox__input" value="music" type="checkbox" tabindex="9">
+                                    <label class="checkbox__caption" for="hobby-01">Music</label>
+                                </div>
+                                <div class=" checkbox__item ">
+                                    <input name="form[hobby-02]" id="hobby-02" class="checkbox__input " value="sports" type="checkbox" tabindex="10">
+                                    <label class="checkbox__caption" for="hobby-02">Sports</label>
+                                </div>
+                                <div class=" checkbox__item ">
+                                    <input name="form[hobby-03]" id="hobby-03" class="checkbox__input " value="travel" type="checkbox" tabindex="11">
+                                    <label class="checkbox__caption" for="hobby-03">Travel</label>
+                                </div>
+                                <div class=" checkbox__item">
+                                    <input name="form[hobby-04]" id="hobby-04" class="checkbox__input " value="movies" type="checkbox" tabindex="12">
+                                    <label class="checkbox__caption" for="hobby-04">Movies</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__income-info ">
+                        <div class="form__select select">
+                            <label class="select__label" for="income">Source of Income</label>
+                            <select name="form[select]" class="select__group" id="income">
+                                <option class="select__option" selected value="01">Employed</option>
+                                <option class="select__option" value="02">Selfemployed</option>
+                                <option class="select__option" value="03">Unemployed</option>
+                                <option class="select__option" value="04">Item-04</option>
+                            </select>
+                        </div>
+                        <div class="form__income-data range">
+                            <div class="range__move">
+                                <label class="range__label" for="range">Income:</label>
+                            </div>
+                            <div class="range__indicator">
+                                <input class="range__marker" type="range" id="range" value="0" name="form[range]" min="0" max="40000" step="1000">
+                                <div class=" range__value" id="value"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form__upload-info ">
+                        <div class=" form__line file">
+                            <span class=" file__label">Upload Profile Picture</span>
+                            <input class="file__input-upload" accept=".jpg, .png" id="file" name="form[file]" type="file">
+                            <span class=" file__button">Choose file </span>
+                            <span class="file__chosen">No file chosen</span>
+                        </div>
+                        <div class="form__line age">
+                            <label class="age__label" for="age">Age</label>
+                            <input class="age__input" id="age" autocomplete="off" placeholder="18" name="form[age]" type="number" min="18" max="110">
+                        </div>
+                    </div>
+                    <div class="form__message message">
+                        <label class="message__label" for="textarea">Bio</label>
+                        <textarea autocomplete="off" id="textarea" name="form[message]" class="message__textarea" placeholder="Tell about yourself"></textarea>
+                    </div>
+                    <div class="form__submit">
+                        <button class="form__button" type="submit" tabindex="18">Create</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <script src="js/script.js"> </script>
+</body>
+
+</html>

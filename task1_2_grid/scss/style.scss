@@ -1,0 +1,147 @@
+@use "sass:math";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,500,700&display=swap");
+@import "reset";
+@import "mixins";
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.wrapper-grid {
+  min-height: 100vw;
+  width: 100%;
+  overflow: clip;
+  display: grid;
+  grid-template-rows: toRem(214) auto toRem(214);
+  text-align: center;
+  row-gap: toRem(22);
+
+  @media (max-width: toEm(889.98)) {
+    row-gap: toRem(0);
+  }
+}
+
+%font-theme {
+  font-size: clamp(toRem(32), 2.5vw, toRem(40));
+  font-weight: 700;
+  line-height: 1.818;
+  letter-spacing: 0.02em;
+}
+
+/* HEADER*/
+.header {
+  grid-row: 1 / span 1;
+
+  background-color: #ea5e32;
+
+  @extend %font-theme;
+
+  display: grid;
+  align-items: center;
+
+  &__title {
+    color: #fff;
+  }
+}
+
+.page {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-columns: minmax(toRem(150), toRem(317)) auto minmax(toRem(150), toRem(317));
+  grid-template-rows: toRem(27) auto;
+  justify-self: center;
+  @extend %font-theme;
+
+  @media (max-width: toEm(889.98)) {
+    grid-template-rows: toRem(109) auto toRem(109);
+   
+    row-gap: toRem(24);
+  }
+
+  &__left {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 3;
+    display: grid;
+    align-items: center;
+    border-radius: 0 toRem(28) toRem(28) 0;
+    background-color: #ffb40a;
+    width: 100%;
+    @media (max-width: toEm(889.98)) {
+      border-radius: 0 0 toRem(28) toRem(28);
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 3;
+      text-align: start;
+      padding-left: toRem(33);
+    }
+  }
+  &__middle {
+    grid-row: 2 / span 1;
+    @media (max-width: toEm(889.98)) {
+      grid-column: 1 / span 3;
+    }
+  }
+
+  &__right {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 3;
+    background-color: #ffd36f;
+    display: grid;
+    align-items: center;
+    border-radius: toRem(28) 0 0 toRem(28);
+   
+    @media (max-width: toEm(889.98)) {
+      grid-column: 1 / span 3;
+      grid-row: 3 / span 1;
+      border-radius: toRem(28) toRem(28) 0 0;
+      text-align: start;
+      padding-left: toRem(33);
+    }
+  }
+  &__links {
+    @media (any-hover: hover) {
+      &:hover {
+        color: rgb(0, 128, 255);
+      }
+    }
+  }
+}
+
+.footer {
+  grid-row: 3 / span 1;
+  background-color: #a82800;
+  display: grid;
+  align-items: center;
+  &__title {
+    color: #fff;
+    @extend %font-theme;
+  }
+}
+
+.middle {
+  padding-inline: toRem(66);
+  @media (max-width: toEm(889.98)) {
+    padding-inline:  toRem(33) toRem(23);
+   
+  }
+  &__title {
+    padding-block: toRem(8);
+    @extend %font-theme;
+    text-align: start;
+    align-self: center;
+    @media (max-width: toEm(889.98)) {
+      padding-block:toRem(0);
+      margin-bottom: toRem(6);
+    }
+   
+  }
+  &__text {
+    font-size: toRem(24);
+    font-weight: 400;
+    line-height: 1.458;
+    text-align: start;
+  }
+}

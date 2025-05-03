@@ -1,0 +1,267 @@
+@use "sass:math";
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,regular,500,700,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pridi:regular&display=swap");
+@import "reset";
+@import "mixins";
+@import "variables";
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: $background_color;
+  color: $black_color;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+  display: flex;
+  flex-direction: row;
+
+  & > .page {
+    flex-grow: 1;
+  }
+
+  @media (max-width: toEm(685.98)) {
+    flex-direction: column;
+  }
+}
+
+%active-theme {
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: rgba(255, 182, 159, 0.3);
+      font-weight: 600;
+    }
+  }
+
+  &:active,
+  &:checked,
+  &:focus {
+    background-color: rgba(255, 182, 159, 0.3);
+    font-weight: 600;
+  }
+}
+
+.page {
+  padding-left: toRem(264);
+  padding-right: clamp(toRem(11), 2.5vw, toRem(140));
+  padding-block: toRem(60);
+
+  &__container {
+    padding-inline: toRem(23);
+  }
+  @media (max-width: toEm(685.98)) {
+    padding-left: toRem(9);
+
+    padding-bottom: toRem(81);
+    &__container {
+      padding-inline: toRem(0);
+    }
+  }
+}
+
+/* HEADER*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $main_color;
+  color: $white_color;
+  min-width: toRem(264);
+  min-height: 100%;
+  height: 100vh;
+  padding-top: toRem(25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @media (max-width: toEm(685.98)) {
+    width: 100%;
+    height: toRem(61);
+    padding-top: toRem(0);
+    position: sticky;
+  }
+
+  &__logo-img {
+    width: toRem(123);
+    height: toRem(136);
+    object-fit: contain;
+
+    margin-left: toRem(23);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(23);
+
+      @media (max-width: toEm(479.98)) {
+        margin-bottom: toRem(20);
+      }
+    }
+
+    @media (max-width: toEm(685.98)) {
+      position: absolute;
+      bottom: toRem(0);
+      right: -100%;
+      z-index: 5;
+    }
+  }
+}
+
+.menu {
+  &__title {
+    font-size: toRem(22);
+    font-weight: 700;
+    line-height: 1.818;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: capitalize;
+    padding-block: toRem(10) toRem(8);
+    padding-left: toRem(23);
+    position: relative;
+
+    @media (max-width: toEm(685.98)) {
+      display: block;
+      padding-block: toRem(10);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: toRem(18);
+        right: toRem(21);
+        width: toRem(26);
+        height: toRem(26);
+        position: absolute;
+        background: url("../img/chevron-up.svg") center/100% no-repeat;
+      }
+    }
+  }
+
+  &__item {
+    padding-left: toRem(25);
+    font-family: Roboto;
+    font-size: toRem(14);
+    position: relative;
+    line-height: 1.817;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: capitalize;
+    padding-block: toRem(13) toRem(16);
+    border-top: toRem(1) solid rgba(255, 255, 255, 0.4);
+
+    @media (min-width: toEm(685.98)) {
+      &:last-child {
+        border-bottom: toRem(1) solid rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    @extend %active-theme;
+  }
+
+  &__list {
+    @media (max-width: toEm(685.98)) {
+      visibility: hidden;
+    }
+  }
+}
+
+.active {
+  background-color: rgba(255, 182, 159, 0.3);
+}
+
+.info-section {
+  &__title,
+  &__link {
+    font-size: toRem(19);
+    font-weight: 700;
+    line-height: 1.818;
+    letter-spacing: 0.02em;
+    text-align: left;
+    text-transform: capitalize;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(14);
+    }
+  }
+
+  &__text,
+  &__list,
+  &__span {
+    font-size: toRem(19);
+    font-weight: 400;
+    line-height: 1.728;
+    letter-spacing: 0.02em;
+    text-align: left;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(12);
+    }
+  }
+
+  &__list {
+    padding-left: toRem(16);
+  }
+
+  &__item {
+    list-style-type: disc;
+  }
+
+  &__span {
+    font-family: "Pridi", sans-serif;
+    background-color: $mark_color;
+    padding-block: toRem(14);
+    padding-left: toRem(20);
+
+    &:not(:last-child) {
+      margin-bottom: toRem(23);
+    }
+
+    @media (max-width: toEm(685.98)) {
+      font-size: toRem(17);
+    }
+  }
+
+  &__link {
+    font-weight: 700;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.02);
+        color: $main_color;
+      }
+    }
+  }
+}
+
+p mark {
+  background-color: $mark_color;
+  font-family: "Pridi", sans-serif;
+}
+
+.menu-open {
+  .header {
+    min-height: toRem(594);
+    padding-top: toRem(0);
+    &__logo-img {
+      right: toRem(29);
+    }
+  }
+
+  .menu {
+    &__title {
+      @media (max-width: toEm(685.98)) {
+        &::after {
+          background: url("../img/chevron-down.svg") center/100% no-repeat;
+        }
+      }
+    }
+
+    &__list {
+      visibility: visible;
+    }
+  }
+}
