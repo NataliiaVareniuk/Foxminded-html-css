@@ -38,21 +38,6 @@ To view these projects in your web browser, simply clone the repository to your 
     Locate the `index.html` file within a specific task's directory (e.g., `task-name/index.html`) and open it with your preferred web browser.
     * **Tip for VS Code users:** You can install the "Live Server" extension by Ritwick Dey to quickly open `index.html` files and automatically refresh the page upon saving changes.
 
-## 📁 Project Structure
-
-The repository is typically organized into folders, with each folder representing a distinct task, exercise, or project. Inside each task folder, you'll usually find the necessary `index.html` and `style.css` files (and potentially image assets).
-Foxminded-html-css/
-├── task-1-landing-page/
-│   ├── index.html
-│   ├── style.css
-│   └── images/
-├── task-2-responsive-layout/
-│   ├── index.html
-│   ├── style.css
-│   └── ...
-├── ...
-├── .gitignore
-└── README.md
 
 
 ## 📧 Contact
